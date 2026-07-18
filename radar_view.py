@@ -1,5 +1,5 @@
 # File: radar_view.py
-# Copyright (c) 2020-2021 RADAR, LLC
+# Copyright (c) 2020-2026 RADAR, LLC
 #
 # Licensed under Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0.txt)
 

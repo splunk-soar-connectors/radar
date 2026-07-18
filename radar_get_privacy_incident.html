@@ -1,30 +1,30 @@
 <!--
 File: radar_get_privacy_incident.html
 
-Copyright (c) 2020-2021 RADAR, LLC
+Copyright (c) 2020-2026 RADAR, LLC
 
 Licensed under Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0.txt)
 -->
-
-{% extends 'widgets/widget_template.html' %}
+{% extends "widgets/widget_template.html" %}
 {% load custom_template %}
-
-{% block title_color %}{{ title_color|default:'white' }}{% endblock %}
-{% block title_text_color %}{{ title_text_color|default:'rgb(101, 71, 150)' }}{% endblock %}
-{% block body_color %}{{ body_color|default:'white' }}{% endblock %}
-{% block body_text_color %}{{ body_text_color|default:'black' }}{% endblock %}
+{% block title_color %}{{ title_color|default:'white' }}{% endblock title_color %}
+{% block title_text_color %}{{ title_text_color|default:'rgb(101, 71, 150) ' }}{% endblock title_text_color %}
+{% block body_color %}{{ body_color|default:'white' }}{% endblock body_color %}
+{% block body_text_color %}{{ body_text_color|default:'black' }}{% endblock body_text_color %}
 {% block custom_title_prop %}{% if title_logo %}style="background-size: auto 60%; background-position: 50%;
-    background-repeat: no-repeat; background-image: url('/app_resource/{{ title_logo }}');"{% endif %}{% endblock %}
-{% block title1 %}{{ title1 }}{% endblock %}
-{% block title2 %}{{ title2 }}{% endblock %}
+    background-repeat: no-repeat; background-image: url('/app_resource/{{ title_logo }}');"{% endif %}{% endblock custom_title_prop %}
+{% block title1 %}{{ title1 }}{% endblock title1 %}
+{% block title2 %}{{ title2 }}{% endblock title2 %}
 {% block custom_tools %}
-{% endblock %}
-
+{% endblock custom_tools %}
 {% block widget_content %}
     <style>
-
         a:hover {
             text-decoration: underline;
+        }
+
+        .radar-caret {
+            font-size: smaller;
         }
 
         .wf-table-vertical td {
@@ -70,14 +70,14 @@ Licensed under Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0.txt)
             {% if result.data %}
                 {% with incident=result.data %}
                     <table class="wf-table-vertical">
-                    <h2 class="wf-h2-style">Radar Privacy Incident</h2>
+                        <h2 class="wf-h2-style">Radar Privacy Incident</h2>
                         <tr>
                             <td class="td-row-start">id</td>
                             <td>
                                 <a href="javascript:;"
                                    onclick="context_menu(this, [{'contains': ['radar incident id'], 'value': '{{ incident.incident_id }}' }], 0, {{ container.id }}, null, false);">
                                     {{ incident.incident_id }}
-                                    &nbsp;<span class="fa fa-caret-down" style="font-size: smaller;"></span>
+                                    &nbsp;<span class="fa fa-caret-down radar-caret"></span>
                                 </a>
                             </td>
                         </tr>
@@ -95,7 +95,7 @@ Licensed under Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0.txt)
                         </tr>
                         <tr>
                             <td class="td-row-start">created at</td>
-                            <td>{{ incident.created_at}}</td>
+                            <td>{{ incident.created_at }}</td>
                         </tr>
                         <tr>
                             <td class="td-row-start">discovered at</td>
@@ -103,7 +103,7 @@ Licensed under Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0.txt)
                         </tr>
                         <tr>
                             <td class="td-row-start">updated at</td>
-                            <td>{{ incident.updated_at}}</td>
+                            <td>{{ incident.updated_at }}</td>
                         </tr>
                         <tr>
                             <td class="td-row-start">updated by</td>
@@ -120,9 +120,8 @@ Licensed under Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0.txt)
                     </table>
                 {% endwith %}
             {% else %}
-            <h2 class="wf-h2-style">No data found</h2>
+                <h2 class="wf-h2-style">No data found</h2>
             {% endif %}
         {% endfor %}
     </div>
-{% endblock %}
-
+{% endblock widget_content %}
