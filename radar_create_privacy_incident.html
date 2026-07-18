@@ -75,7 +75,7 @@ Licensed under Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0.txt)
                             <td class="td-row-start">id</td>
                             <td>
                                 <a href="javascript:;"
-                                   onclick="context_menu(this, [{'contains': ['radar incident id'], 'value': '{{ incident.incident_id }}' }], 0, {{ container.id }}, null, false);">
+                                   onclick="context_menu(this, [{'contains': ['radar incident id'], 'value': '{{ incident.incident_id|escapejs }}' }], 0, {{ container.id }}, null, false);">
                                     {{ incident.incident_id }}
                                     &nbsp;<span class="fa fa-caret-down radar-caret"></span>
                                 </a>

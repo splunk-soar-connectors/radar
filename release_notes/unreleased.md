@@ -1,3 +1,3 @@
 **Unreleased**
 
-* Refresh connector validation tooling.
+* Escape Radar incident IDs before embedding them in widget JavaScript menus.
