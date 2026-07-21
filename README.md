@@ -1,7 +1,7 @@
 # Radar
 
 Publisher: RADAR, LLC <br>
-Connector Version: 1.0.0 <br>
+Connector Version: 1.0.3 <br>
 Product Vendor: RADAR, LLC <br>
 Product Name: Radar <br>
 Minimum Product Version: 4.9.39220

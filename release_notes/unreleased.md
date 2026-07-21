@@ -1,3 +1,1 @@
 **Unreleased**
-
-* Escape Radar incident IDs before embedding them in widget JavaScript menus.
